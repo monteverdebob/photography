@@ -6,7 +6,7 @@ import uglify from 'gulp-uglify';
 import rename from 'gulp-rename';
 import filter from 'gulp-filter';
 import path from 'path';
-import del from 'del';
+import {deleteAsync} from 'del';
 
 const sass = gulpSass(dartSass);
 const cssSourceGlob = './assets/sass/**/*.scss';
@@ -18,7 +18,7 @@ const generatedCssFiles = [
 ];
 
 gulp.task('delete', function () {
-    return del(['images/*.*']);
+    return deleteAsync(['images/*.*']);
 });
 
 gulp.task('resize-images', function () {
@@ -37,7 +37,7 @@ gulp.task('resize-images', function () {
 
 // clear previously generated css
 gulp.task('clean-css', function () {
-    return del(generatedCssFiles);
+    return deleteAsync(generatedCssFiles);
 });
 
 // compile scss to css

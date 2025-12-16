@@ -1,5 +1,5 @@
 # Base configs
-baseurl: "https://monteverdebob.github.io/photography"
+baseurl: "https://bobm.photography"
 # baseurl: "" # Comment the above line and uncomment this to test the website locally
 image_fulls_loc: "/images/fulls"
 image_thumbs_loc: "/images/thumbs"
@@ -14,7 +14,7 @@ header:
  subtitle: "by Bob Monteverde"
 footer:
  name: "Some Photography, By Bob Monteverde"
- bio: "I am a [principal] software engineer, specializing in Front End and Data Visualization in d3.js, ReactJS, etc. While I take some time off, I've been learning photography."
+ bio: "I am a [Principal] Software Engineer, specializing in Front End and Data Visualization in d3.js, ReactJS, etc. While I am taking some time off, I've been learning photography."
  github: "While I have not allocated the time to build a unique site, I'll give credit where credit is due.  This site is a <a href=\"https://github.com/rampatra/photography\">fork of this repo by Ram Patra</a>."
 #web_design: "AJ"
 

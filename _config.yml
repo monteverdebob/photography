@@ -16,14 +16,14 @@ footer:
  name: "Some Photography, By Bob Monteverde"
  bio: "I am a [principal] software engineer, specializing in Front End and Data Visualization in d3.js, ReactJS, etc. While I take some time off, I've been learning photography."
  github: "While I have not allocated the time to build a unique site, I'll give credit where credit is due.  This site is a <a href=\"https://github.com/rampatra/photography\">fork of this repo by Ram Patra</a>."
-web_design: "AJ"
+#web_design: "AJ"
 
 social_urls:
+  linkedin: "www.linkedin.com/in/bobmonteverde"
+  github: "https://www.github.com/monteverdebob"
   #twitter: ""
   #instagram: ""
   #dribbble: ""
-  linkedin: "www.linkedin.com/in/bobmonteverde"
-  github: "https://www.github.com/monteverdebob"
 
 # Configure which exif data to display
 # Tag is the actual exif tag, icon is a fontawesome icon. Use JSON notation without line breaks

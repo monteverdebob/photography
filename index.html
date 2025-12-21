@@ -90,11 +90,10 @@ layout: default
                     &copy; {{ site.author }}.
                 </p>
             </div>
-            <!--
             <div>
                 <section>
                     <h2>Get in touch</h2>
-                    <form method="post" action="#">
+                    <form id="contactForm" method="POST" action="{{ site.google_formhandler_url }}">
                         <div class="fields">
                             <div class="field half">
                                 <input type="text" name="name" id="name" placeholder="Name" />
@@ -110,10 +109,52 @@ layout: default
                             <li><input type="submit" value="Send" class="primary" /></li>
                             <li><input type="reset" value="Reset" /></li>
                         </ul>
+                        <div id="formStatus"></div>
                     </form>
+                    
                 </section>
             </div>
-            -->
         </div>
     </footer>
 </div>
+
+<script>
+    const form = document.getElementById('contactForm');
+    const statusDiv = document.getElementById('formStatus');
+    // !!! REPLACE THIS WITH YOUR DEPLOYED APPS SCRIPT URL !!!
+    const formAction = form.getAttribute("action"); 
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Stop the browser from submitting the form normally
+
+        // Display a loading message
+        statusDiv.innerHTML = 'Sending...';
+
+        // Get all the data from the form fields
+        const formData = new FormData(form);
+        
+        // Convert FormData to a URL-encoded string (required by Apps Script doPost)
+        const urlEncodedData = new URLSearchParams(formData).toString();
+
+        fetch(formAction, {
+            method: 'POST',
+            mode: 'no-cors', // Essential for cross-origin submission to Apps Script
+            cache: 'no-cache',
+            // Send the data as 'application/x-www-form-urlencoded'
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded', 
+            },
+            body: urlEncodedData,
+        })
+        .then(() => {
+            // Note: Because we use 'mode: no-cors', we can't read the actual JSON
+            // response from the server, but a successful fetch generally means the script ran.
+            statusDiv.innerHTML = '<span style="color: green;">Thank you! Your message has been sent.</span>';
+            form.reset(); // Clear the form fields
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            statusDiv.innerHTML = '<span style="color: red;">Oops! There was an error sending your message.</span>';
+        });
+    });
+</script>

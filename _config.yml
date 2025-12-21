@@ -4,6 +4,7 @@ baseurl: "https://bobm.photography"
 image_fulls_loc: "/images/fulls"
 image_thumbs_loc: "/images/thumbs"
 google_analytics: "G-57L193T7CY"
+google_formhandler_url: "https://script.google.com/macros/s/AKfycbzFUzblCDB94oSK2RzEGtMOKS7quSLh0bHJ_SXCcaZsvOh4BjxpqICNL7GHbEeP2-pk/exec" 
 
 # UI configs
 title: "Photography by Bob Monteverde"
